@@ -43,31 +43,35 @@ Vamos usar hoje a plataforma gratuita que o rstudio disponibiliza online
 
 - O Rstudio é uma plataforma mais amigavel para se programar em R e outras linguagens!
 
---
-
-- Vamos usar um recurso gramatical muito importante para o [Tidyverse](https://www.tidyverse.org/) o **%>%** 
 
 ---
-background-image: url(http://material.curso-r.com/logo-curso-r.png)
+background-image: url(https://github.com/arzevedo/biome_wrangling/blob/master/pres_data/rstudio_layout.png?raw=true)
 background-position: 50% 50%
 class: center, bottom, inverse
 
-# You only live once!
+---
+background-image: url(https://github.com/arzevedo/biome_wrangling/blob/master/pres_data/rstudio_layout2.png?raw=true)
+background-position: 50% 50%
+class: center, bottom, inverse
 
 ---
+# First things first
 
-# Hello Ninja
+Vamos usar amplamente o [Tidyverse](https://www.tidyverse.org/)
+--
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+- O que é tidyverse?
 
-1. The [remark.js](https://remarkjs.com) library;
+--
 
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+- Militantes do R-base e a cultura do _back end_ 
 
 ---
+background-image: url(https://github.com/arzevedo/biome_wrangling/blob/master/pres_data/tidyverse.png?raw=true)
+background-position: 50% 50%
+class: left, top, inverse
 
+---
 # remark.js
 
 You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
