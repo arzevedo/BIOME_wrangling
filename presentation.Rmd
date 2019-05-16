@@ -182,21 +182,49 @@ class: top, center
 
 ---
 
-# Lendo nossos dados
+# Agora vamos colocar a mão na massa!
 
-```{r message=FALSE}
-board_games <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-12/board_games.csv")
-```
-### ou 
-```{r message=FALSE}
-board_games <- utils::read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-12/board_games.csv")
-```
+--
+
+- No repositório do **git** tem os códigos e as propostas que utilizaremos hoje. Mas vamos a um apanhado das principais perguntas que podemos ter com nosso __dataset__.
+
+--
+
+## Perguntas
+
+--
+
+- Estamos na era de ouro dos board games?
+
+--
+
+- Quais tipos de jogos são mais populares ?
+
+--
+
+- Quais variáveis estão correlacionadas com a nota do jogo ?
+
+---
+class: center, middle
+
+# Obrigado pela atenção!
+
 ---
 
 class: center, middle
 
 # Alguns links importantes!
 
+[Repositório](https://github.com/arzevedo/biome_wrangling)
+
 [538 article](https://fivethirtyeight.com/features/designing-the-best-board-game-on-the-planet/)
 
-[raw dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-12)
+[Dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-12)
+
+[Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+---
+class: center, middle
+# Referencias interessantes
+[R for data science](https://r4ds.had.co.nz/)
+
+[Fundamentals of Data Visualization](https://serialmentor.com/dataviz/)
