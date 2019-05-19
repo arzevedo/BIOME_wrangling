@@ -1,0 +1,43 @@
+---
+title: "Treino Wrangling"
+author: "Seu Nome"
+date: "18/05/2019"
+output: html_document
+---
+
+# Biome Craft
+O primeiro passo é instalar os pacotes que devemos utilizar hoje.
+```{r Pacotes que devem ser instalados, include=FALSE}
+install.packages("tidyverse")
+install.packages("broom")
+install.packages("e1071")
+install.packages("nortest")
+```
+Uma vez que os pacotes foram instalados, você pode comentar esse _chunk_ ou tirar ele do markdown
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(broom)
+library(e1071)
+library(nortest)
+theme_set(theme_light())
+```
+## Perguntas 
+
+- Estamos na era de ouro dos board games?
+
+- Quais tipos de jogos são mais populares ?
+
+- Quais estilos de jogos são mais frequentes?
+
+- Quais estilos estão correlacionadas com a nota do jogo ?
+
+### Carregando o _dataset_
+
+```{r loading data, include=FALSE}
+board_games <- read_csv("https://raw.githubusercontent.com/arzevedo/biome_wrangling/master/board_games.csv")
+
+#View(board_games)
+```
+O banco tem aproximadamente 100 MB. Deve demorar uns 10 segundos.

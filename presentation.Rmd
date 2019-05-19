@@ -12,9 +12,10 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
-
 background-image: url("http://meirelleslab.org/wp-content/uploads/2018/01/BIOME_site-logo-color-1.png")
-
+background-position: 50% 50%
+background-size: 50%
+class: center, bottom, fullscale
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 library(janitor)
@@ -104,7 +105,7 @@ class: inverse, middle, center
 
 ---
 # DPLYR
-O pacote dplyr _diplaiar_ é um conjunto de funções para manipulação de dados, que ajudam a resolver os desafios mais comuns de manipulação de dados.
+O pacote dplyr é um conjunto de funções para manipulação de dados, que ajudam a resolver os desafios mais comuns do coditiano.
 
 O primeiro argumento é uma matriz de dados (data frame)
 
@@ -120,8 +121,9 @@ Os argumentos subsequentes descrevem o que fazer com ele, e você pode se referi
 ---
 background-image: url(https://media.giphy.com/media/11tTNkNy1SdXGg/giphy.gif)
 background-position: 50% 50%
-class: center, bottom
-# NÃO PRECISA USAR ATTACH !!!!!
+background-size: 100%
+class: center, bottom, fullscale, inverse
+##### NÃO PRECISA USAR ATTACH !!!!!
 ---
 # DPLYR 
 
@@ -130,10 +132,9 @@ O _dplyr_ realmente brilha quando usamos um recurso gramatical muito eficiente:
 ---
 background-image: url(https://media.giphy.com/media/csINlSnkyq0ms/giphy.gif)
 background-position: 50% 50%
-class: inverse, top, center
-
+background-size: 100%
+class: center, top, fullscale, inverse
 # %>%
-
 ---
 class: top, center
 
@@ -150,7 +151,7 @@ ou ainda
 ---
 class: top, center
 
-# O pipe pra galera (_nope_)
+# O pipe pra galera 
 ###Pegue a chave: chave
 
 ###Abra a porta e entre: abra()
@@ -172,14 +173,22 @@ class: inverse, middle, center
 background-image: url(https://github.com/arzevedo/biome_wrangling/blob/master/pres_data/receita_de_bolo.png?raw=true)
 background-position: 50% 50%
 ---
-class: inverse, middle, center
+background-image: url(https://media.giphy.com/media/9r6EEb8o1bJFQeHTxP/giphy.gif)
+background-position: 50% 50%
+background-size: 100%
+class: center, bottom, fullscale, inverse
 # Agora vamos colocar a mão na massa!
+---
+background-image: url(https://media.giphy.com/media/IWOTlIqnWzTFe/giphy.gif)
+background-position: 50% 50%
+background-size: 100%
+class: center, bottom, fullscale
 ---
 background-image: url(https://media.giphy.com/media/EMBAJjmUMIpB6/giphy.gif)
 background-position: 50% 50%
-class: top, center
+background-size: 100%
+class: center, bottom, fullscale, inverse
 # Qual será nosso _dataset_ ?
-
 ---
 
 # Agora vamos colocar a mão na massa!
@@ -202,13 +211,17 @@ class: top, center
 
 --
 
+- Quais estilos de jogos são mais frequentes?
+
+--
+
 - Quais variáveis estão correlacionadas com a nota do jogo ?
-
 ---
-class: center, middle
-
+background-image: url(https://media.giphy.com/media/SUQYDSfiXecWW2NJ6I/giphy.gif)
+background-position: 50% 50%
+background-size: 100%
+class: left, top, fullscale, inverse
 # Obrigado pela atenção!
-
 ---
 
 class: center, middle

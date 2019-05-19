@@ -29,9 +29,10 @@ class: center, middle, inverse, title-slide
 
 ---
 
-
 background-image: url("http://meirelleslab.org/wp-content/uploads/2018/01/BIOME_site-logo-color-1.png")
-
+background-position: 50% 50%
+background-size: 50%
+class: center, bottom, fullscale
 
 ???
 mage credit: [Wikimedia Commons]("http://meirelleslab.org/wp-content/uploads/2018/01/BIOME_site-logo-color-1.png")
@@ -66,8 +67,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-38.508670,-13.001125, zoom = 17)
 ```
 
-<div id="htmlwidget-df397459b987e4de5db9" style="width:100%;height:360px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-df397459b987e4de5db9">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[-13.001125,-38.50867],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-866c6d4d858871e7d6e3" style="width:100%;height:360px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-866c6d4d858871e7d6e3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[-13.001125,-38.50867],17,[]]},"evals":[],"jsHooks":[]}</script>
 ---
 # First things first
 
@@ -121,7 +122,7 @@ class: inverse, middle, center
 
 ---
 # DPLYR
-O pacote dplyr _diplaiar_ é um conjunto de funções para manipulação de dados, que ajudam a resolver os desafios mais comuns de manipulação de dados.
+O pacote dplyr é um conjunto de funções para manipulação de dados, que ajudam a resolver os desafios mais comuns do coditiano.
 
 O primeiro argumento é uma matriz de dados (data frame)
 
@@ -137,8 +138,9 @@ Os argumentos subsequentes descrevem o que fazer com ele, e você pode se referi
 ---
 background-image: url(https://media.giphy.com/media/11tTNkNy1SdXGg/giphy.gif)
 background-position: 50% 50%
-class: center, bottom
-# NÃO PRECISA USAR ATTACH !!!!!
+background-size: 100%
+class: center, bottom, fullscale, inverse
+##### NÃO PRECISA USAR ATTACH !!!!!
 ---
 # DPLYR 
 
@@ -147,10 +149,9 @@ O _dplyr_ realmente brilha quando usamos um recurso gramatical muito eficiente:
 ---
 background-image: url(https://media.giphy.com/media/csINlSnkyq0ms/giphy.gif)
 background-position: 50% 50%
-class: inverse, top, center
-
+background-size: 100%
+class: center, top, fullscale, inverse
 # %&gt;%
-
 ---
 class: top, center
 
@@ -167,7 +168,7 @@ ou ainda
 ---
 class: top, center
 
-# O pipe pra galera (_nope_)
+# O pipe pra galera 
 ###Pegue a chave: chave
 
 ###Abra a porta e entre: abra()
@@ -189,36 +190,74 @@ class: inverse, middle, center
 background-image: url(https://github.com/arzevedo/biome_wrangling/blob/master/pres_data/receita_de_bolo.png?raw=true)
 background-position: 50% 50%
 ---
-class: inverse, middle, center
+background-image: url(https://media.giphy.com/media/9r6EEb8o1bJFQeHTxP/giphy.gif)
+background-position: 50% 50%
+background-size: 100%
+class: center, bottom, fullscale, inverse
 # Agora vamos colocar a mão na massa!
+---
+background-image: url(https://media.giphy.com/media/IWOTlIqnWzTFe/giphy.gif)
+background-position: 50% 50%
+background-size: 100%
+class: center, bottom, fullscale
 ---
 background-image: url(https://media.giphy.com/media/EMBAJjmUMIpB6/giphy.gif)
 background-position: 50% 50%
-class: top, center
+background-size: 100%
+class: center, bottom, fullscale, inverse
 # Qual será nosso _dataset_ ?
-
 ---
 
-# Lendo nossos dados
+# Agora vamos colocar a mão na massa!
 
+--
 
-```r
-board_games &lt;- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-12/board_games.csv")
-```
-### ou 
+- No repositório do **git** tem os códigos e as propostas que utilizaremos hoje. Mas vamos a um apanhado das principais perguntas que podemos ter com nosso __dataset__.
 
-```r
-board_games &lt;- utils::read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-12/board_games.csv")
-```
+--
+
+## Perguntas
+
+--
+
+- Estamos na era de ouro dos board games?
+
+--
+
+- Quais tipos de jogos são mais populares ?
+
+--
+
+- Quais estilos de jogos são mais frequentes?
+
+--
+
+- Quais variáveis estão correlacionadas com a nota do jogo ?
+---
+background-image: url(https://media.giphy.com/media/SUQYDSfiXecWW2NJ6I/giphy.gif)
+background-position: 50% 50%
+background-size: 100%
+class: left, top, fullscale, inverse
+# Obrigado pela atenção!
 ---
 
 class: center, middle
 
 # Alguns links importantes!
 
+[Repositório](https://github.com/arzevedo/biome_wrangling)
+
 [538 article](https://fivethirtyeight.com/features/designing-the-best-board-game-on-the-planet/)
 
-[raw dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-12)
+[Dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-12)
+
+[Data Transformation Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+---
+class: center, middle
+# Referencias interessantes
+[R for data science](https://r4ds.had.co.nz/)
+
+[Fundamentals of Data Visualization](https://serialmentor.com/dataviz/)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
