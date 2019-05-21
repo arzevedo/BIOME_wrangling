@@ -5,6 +5,8 @@ date: "18/05/2019"
 output: html_document
 ---
 
+
+
 # Biome Craft
 O primeiro passo é instalar os pacotes que devemos utilizar hoje.
 ```{r Pacotes que devem ser instalados, include=FALSE}
@@ -41,3 +43,120 @@ board_games <- read_csv("https://raw.githubusercontent.com/arzevedo/biome_wrangl
 #View(board_games)
 ```
 O banco tem aproximadamente 100 MB. Deve demorar uns 10 segundos.
+
+
+```{r ano}
+board_games <- board_games %>% 
+  filter(year_published >= 1950, year_published <= 2016)
+
+board_games_count <- board_games %>% 
+  count(year_published, sort = TRUE)
+
+
+board_games_count %>% 
+  ggplot(aes(x = year_published,
+             y = n))+
+  geom_line()+
+  labs(title = "plot line")
+  
+
+```
+
+
+```{r}
+
+categorical_variables <- board_games %>% 
+  select(game_id, name, family, category, artist, designer) %>% 
+  gather(type, value, - game_id, - name) %>%
+  filter(!is.na(value)) %>%
+  separate_rows(value, sep = ",") %>% 
+  arrange(game_id)
+
+
+categorical_counts <- categorical_variables %>% 
+  count(type, value, sort = TRUE)
+
+
+
+
+categorical_counts %>% 
+  #filter(type == "category") %>% 
+  head(20) %>% 
+  mutate(value = fct_reorder(value,n)) %>% 
+  ggplot(aes(value, n))+
+  geom_point()+
+  labs(title = "Categorias mais frequentes nos jogos", x = "", y = "contagem")+
+  coord_flip()
+
+
+categorical_counts %>% 
+  group_by(type) %>% 
+  top_n(15, n) %>%
+  ungroup() %>% 
+  
+  mutate(value = fct_reorder(value, n),
+         type = fct_reorder(type, n, .desc = TRUE)) %>%
+  
+  
+  ggplot(aes(value, n, fill = type))+
+  facet_wrap(~type, scales = "free_y")+
+  geom_col(show.legend = FALSE)+
+  coord_flip()+
+  labs(title = "Categorias mais frequentes nos jogos\npor cada variável")+
+  theme_minimal()
+  
+
+```
+
+```{r}
+board_games %>% 
+  ggplot(aes(average_rating))+
+  geom_histogram()+
+  labs(title = "O hate é real...\nQuantas pessoas deram essa nota?")
+
+
+
+
+board_games <- board_games %>% 
+  filter(users_rated >= 50)
+
+board_games %>% 
+  ggplot(aes(average_rating))+
+  geom_histogram(bins = 25)+
+  labs(title = "...Não muitos")
+
+
+
+
+
+
+board_games %>% 
+  ggplot(aes(users_rated))+
+  geom_histogram()+
+  scale_x_log10()+
+  labs(x = "número de avaliações em log10")
+
+
+board_games %>% 
+  filter(max_playtime >= 5, max_playtime <= 1000) %>% 
+  ggplot(aes(max_playtime / 60))+
+  geom_histogram(
+    binwidth = .25
+    )+
+  scale_x_log10(breaks = 2 ^ seq(-2,4))+
+  labs(x = "Duração maxima do jogo em horas")
+
+```
+
+
+```{r}
+board_games %>% 
+  inner_join(categorical_variables, by = c("game_id", "name")) %>% 
+  select(type, value, average_rating) %>% 
+  group_by(type, value) %>% 
+  summarise(games = n(),
+            average_rating = mean(average_rating)) %>% 
+  arrange(desc(average_rating)) %>% 
+  filter(type == "category")
+```
+
